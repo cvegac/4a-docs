@@ -6,7 +6,6 @@ import com.mintic.product_ms.models.Product;
 import com.mintic.product_ms.repositories.ProductRepository;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -25,6 +24,13 @@ public class ProductController {
     @GetMapping("/products/{type}")
     List<Product> getProductsType(@PathVariable String type){
         return productRepository.findByType(type);
+
+    }
+
+
+    @GetMapping("/productname/{name}")
+    List<Product> getProductsName(@PathVariable String name){
+        return productRepository.findByName(name);
     }
 
     /*
@@ -44,16 +50,17 @@ public class ProductController {
     }
 
 
-    @PutMapping("/product/{buy}")
-    List<Product> updateProduct(@PathVariable Integer buy, @RequestBody Product product){
-        productRepository.findById(product.getId())
-                .orElseThrow(() -> new ProductNotFoundException("No se encontro el producto"));
+    @PutMapping("/product/{quantity}")
+    List<Product> updateProduct(@PathVariable Integer quantity, @RequestBody Product product){
         List<Product> products = productRepository.findByName(product.getName());
 
-        if (products.size() < buy)
+        if (products.size() < 1)
+            throw new InsufficientQuantityException("Producto no encontrado");
+
+        if (products.size() < quantity)
             throw new InsufficientQuantityException("Cantidad superior al Stock");
 
-        for (int i=0; i<buy; i++){
+        for (int i=0; i<quantity; i++){
             productRepository.delete(products.get(i));
         }
 

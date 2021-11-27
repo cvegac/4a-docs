@@ -10,14 +10,18 @@ const productResolver = {
 
         productById: async(_, { id }, { dataSources }) => {
             return await dataSources.productAPI.productById(id)
+        },
+
+        productByName: async(_, { name }, { dataSources }) => {
+            return await dataSources.productAPI.productByName(name)
         }
     },
     Mutation: {
-        createProduct: async(_, { productInput }, { dataSources }) => {
-            return dataSources.accountAPI.createProduct(productInput)
+        createProduct: async(_, { product }, { dataSources }) => {
+            return await dataSources.productAPI.createProduct(product);
         },
-        buyProduct: async(_, { productInput }, { dataSources }) => {
-            return dataSources.accountAPI.buyProduct(productInput)
+        buyProduct: async(_, { product }, { dataSources }) => {
+            return await dataSources.productAPI.buyProduct(product);
         }
     }
 };

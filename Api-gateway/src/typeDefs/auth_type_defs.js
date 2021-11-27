@@ -20,7 +20,6 @@ const authTypeDefs = gql `
         password: String!
         name: String!
         email: String!
-        balance: Int!
     }
 
     type UserDetail {
@@ -31,13 +30,13 @@ const authTypeDefs = gql `
         email: String!
     }
     
-    type Mutation {
-        signUpUser(userInput :SignUpInput): Tokens!
+    extend type Mutation {
+        signUpUser(userInput: SignUpInput): Tokens!
         logIn(credentials: CredentialsInput!): Tokens!
         refreshToken(refresh: String!): Access!
     }
 
-    type Query {
+    extend type Query {
         userDetailById(userId: Int!): UserDetail!
     }
 `;

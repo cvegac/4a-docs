@@ -1,0 +1,8 @@
+com\mintic\product_ms\controllers\ProductController.class
+com\mintic\product_ms\exceptions\InsufficientQuantityAdvice.class
+com\mintic\product_ms\models\Product.class
+com\mintic\product_ms\ProductMsApplication.class
+com\mintic\product_ms\exceptions\InsufficientQuantityException.class
+com\mintic\product_ms\exceptions\ProductNotFoundAdvice.class
+com\mintic\product_ms\repositories\ProductRepository.class
+com\mintic\product_ms\exceptions\ProductNotFoundException.class

@@ -21,23 +21,26 @@ class ProductAPI extends RESTDataSource {
         return await this.get(`/product/${id}`);
     }
 
+    async productByName(name) {
+        return await this.get(`/productname/${name}`);
+    }
+
     async createProduct(product) {
         product = new Object(JSON.parse(JSON.stringify(product)));
-        let products = new Object();
         let quantity = product.quantity;
         delete product.quantity;
+        console.log(product);
         for (let index = 0; index < quantity; index++) {
-            products.add(product);
             await this.post('/product', product);
         }
-        return products;
+        return product;
     }
 
     async buyProduct(product) {
         product = new Object(JSON.parse(JSON.stringify(product)));
         let quantity = product.quantity;
         delete product.quantity;
-        return await this.put(`/products/${quantity}`, product);
+        return await this.put(`/product/${quantity}`, product);
     }
 
 }

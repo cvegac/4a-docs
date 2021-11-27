@@ -1,0 +1,8 @@
+D:\Cursos\MinTic\Ciclo4\Projecto\product_ms\src\main\java\com\mintic\product_ms\controllers\ProductController.java
+D:\Cursos\MinTic\Ciclo4\Projecto\product_ms\src\main\java\com\mintic\product_ms\exceptions\ProductNotFoundException.java
+D:\Cursos\MinTic\Ciclo4\Projecto\product_ms\src\main\java\com\mintic\product_ms\exceptions\InsufficientQuantityException.java
+D:\Cursos\MinTic\Ciclo4\Projecto\product_ms\src\main\java\com\mintic\product_ms\repositories\ProductRepository.java
+D:\Cursos\MinTic\Ciclo4\Projecto\product_ms\src\main\java\com\mintic\product_ms\exceptions\ProductNotFoundAdvice.java
+D:\Cursos\MinTic\Ciclo4\Projecto\product_ms\src\main\java\com\mintic\product_ms\exceptions\InsufficientQuantityAdvice.java
+D:\Cursos\MinTic\Ciclo4\Projecto\product_ms\src\main\java\com\mintic\product_ms\models\Product.java
+D:\Cursos\MinTic\Ciclo4\Projecto\product_ms\src\main\java\com\mintic\product_ms\ProductMsApplication.java

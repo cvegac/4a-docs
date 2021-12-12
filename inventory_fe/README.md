@@ -1,4 +1,4 @@
-# bank_fe
+# inventory_fe
 
 ## Project setup
 ```
